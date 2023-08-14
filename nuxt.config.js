@@ -1,70 +1,70 @@
-require('dotenv').config();
+require("dotenv").config();
 
 export default {
-  mode: 'spa',
+  mode: "spa",
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.npm_package_name || "",
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { charset: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        hid: "description",
+        name: "description",
+        content: process.env.npm_package_description || "",
+      },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Roboto'
-      }
-    ]
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css?family=Roboto",
+      },
+    ],
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: "#fff" },
   /*
    ** Global CSS
    */
   css: [
-    '~/assets/css/tailwind.css',
-    'vue-loading-overlay/dist/vue-loading.css'
+    "~/assets/css/tailwind.css",
+    "vue-loading-overlay/dist/vue-loading.css",
   ],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/vue-loading-overlay.js'],
+  plugins: ["~/plugins/vue-loading-overlay.js"],
   /*
    ** Nuxt.js modules
    */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    'vue-sweetalert2/nuxt',
-    '@nuxtjs/axios',
-    '@nuxtjs/dotenv',
+    "vue-sweetalert2/nuxt",
+    "@nuxtjs/axios",
+    "@nuxtjs/dotenv",
     [
-      'nuxt-mq',
+      "nuxt-mq",
       {
         // Default breakpoint for SSR
-        defaultBreakpoint: 'default',
+        defaultBreakpoint: "default",
         breakpoints: {
           sm: 780,
           md: 1024,
-          lg: Infinity
-        }
-      }
+          lg: Infinity,
+        },
+      },
     ],
     [
-      'nuxt-validate',
+      "nuxt-validate",
       {
-        lang: 'es'
-      }
-    ]
+        lang: "es",
+      },
+    ],
   ],
 
   /*
@@ -72,8 +72,8 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: "https://xc-api-52uy.onrender.com/api",
-    browserBaseURL: "https://xc-api-52uy.onrender.com/api"
+    baseURL: "http://192.168.100.181:7001/api",
+    browserBaseURL: "http://192.168.100.181:7001/api",
   },
 
   /*
@@ -82,16 +82,16 @@ export default {
   build: {
     postcss: {
       plugins: {
-        tailwindcss: './tailwind.config.js'
-      }
+        tailwindcss: "./tailwind.config.js",
+      },
     },
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {},
   },
   server: {
     host: "0.0.0.0",
-    port: 9000
-  }
+    port: 9000,
+  },
 };
