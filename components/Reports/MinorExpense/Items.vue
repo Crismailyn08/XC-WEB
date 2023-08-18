@@ -3,7 +3,7 @@
     class="flex flex-wrap justify-center items-center p-4 w-full tablet:flex-no-wrap tablet:justify-around tablet:py-2 rounded-lg"
   >
     <td
-      v-if="$mq != 'sm'"
+      v-if="$mq !== 'sm'"
       class="flex justify-center items-center tablet:w-1/12 bg-hueso rounded-full"
     >
       <!-- <img
@@ -14,34 +14,34 @@
       /> -->
       <avatar v-if="minorExpense.user"
         :lighten="10"
-        :size="80"
+        :size="60"
         color="grey"
         backgroundColor="ccc"
         :username="minorExpense.user.fullName"
       ></avatar>
     </td>
-    <td class="flex flex-col mt-2 tablet:px-3 w-1/2 tablet:w-auto">
+    <td class="flex flex-col tablet:px-3 w-1/2 tablet:ml-6">
       <span>{{ minorExpense.invoiceDate }}</span>
       <label>Fecha</label>
     </td>
-    <td class="flex flex-col mt-2 tablet:px-3 w-1/2 tablet:w-auto">
+    <td class="flex flex-col tablet:px-3 w-1/2 ">
       <span>{{ minorExpense.description }}</span>
       <label>Descripcion</label>
     </td>
-    <td class="flex flex-col mt-2 tablet:px-3 w-1/2 tablet:w-auto">
+    <td class="flex flex-col  tablet:px-3 w-1/2 ">
       <span>{{ minorExpense.place }}</span>
       <label>Lugar</label>
     </td>
-    <td class="flex flex-col mt-2 tablet:px-3 w-1/2 tablet:w-auto">
+    <td class="flex flex-col  tablet:px-3 w-1/2 tablet:ml-10">
       <span>{{ minorExpense.total }}</span>
       <label>Monto</label>
     </td>
-    <td class="flex flex-col mt-2 tablet:px-3 w-1/2 tablet:w-auto">
+    <td class="flex flex-col tablet:px-3 w-1/2 ">
       <span>{{ minorExpense.status }}</span>
       <label>Status</label>
     </td>
 
-    <td class="flex mt-2 tablet:px-3 w-1/2 tablet:w-auto">
+    <td class="flex tablet:px-3 w-1/2 tablet:w-auto tablet:mr-8">
       <actions
         :edit="edit"
         @details="$emit('itemDetails', minorExpense)"

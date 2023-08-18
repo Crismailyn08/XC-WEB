@@ -3,7 +3,7 @@
     class="flex flex-col justify-center items-center p-4 w-full tablet:flex-row tablet:justify-around tablet:py-2 rounded-lg"
   >
       <td
-      v-if="$mq != 'sm'"
+      v-if="$mq !== 'sm'"
       class="flex justify-center items-center tablet:w-1/12 bg-hueso rounded-full"
     >
       <!-- <img
@@ -14,34 +14,34 @@
       /> -->
       <avatar v-if="reimbursable.user"
         :lighten="10"
-        :size="80"
+        :size="60"
         color="grey"
         backgroundColor="ccc"
         :username="reimbursable.user.fullName"
       ></avatar>
       
     </td>
-    <td class="flex flex-col mt-2 tablet:px-3 w-1/3 tablet:w-auto">
+    <td class="flex flex-col tablet:px-3 w-1/2 tablet:ml-5">
       <span>{{reimbursable.invoiceDate}}</span>
       <label>Fecha</label>
     </td>
-    <td class="flex flex-col mt-2 tablet:px-3 w-1/2 tablet:w-auto">
+    <td class="flex flex-col tablet:px-3 w-1/2">
       <span>{{reimbursable.provider}}</span>
       <label>Proveedor</label>
     </td>
-    <td class="flex flex-col mt-2 tablet:px-3 w-1/2 tablet:w-auto">
+    <td class="flex flex-col tablet:px-3 w-1/2">
       <span>{{reimbursable.rnc}}</span>
       <label>RNC</label>
     </td>
-    <td class="flex flex-col mt-2 tablet:px-3 w-1/2 tablet:w-auto">
+    <td class="flex flex-col tablet:px-3 w-1/2 ">
       <span>RD${{parseInt(reimbursable.total).toFixed(2)}}</span>
       <label>Total</label>
     </td>
-    <td class="flex flex-col mt-2 tablet:px-3 w-1/2 tablet:w-auto">
+    <td class="flex flex-col tablet:px-3 w-1/2 ">
       <span>{{reimbursable.status }}</span>
       <label>Status</label>
     </td>
-    <td class="flex flex-col mt-2 tablet:px-3 w-1/2 tablet:w-auto">
+    <td class="flex flex-col tablet:px-3 w-1/2 tablet:w-auto tablet:mr-8">
       <actions
         :edit="edit"
         @details="$emit('itemDetails', reimbursable)"

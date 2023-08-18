@@ -8,7 +8,7 @@
           @click="logout()"
           class="hidden tablet:mt-4 tablet:block cursor-pointer"
           src="../../../assets/images/logout-button.svg"
-        />
+         alt="Logout"/>
         <nuxt-link to="/">
           <img
             class="tablet:hidden w-1/2"
@@ -124,8 +124,8 @@ export default {
       api_url: process.env.API_URL,
       report_count: {
         total: 0,
-        aprobados: 0,
-        pendiente: 0,
+        approved: 0,
+        pending: 0,
       },
     };
   },
@@ -136,7 +136,7 @@ export default {
   methods: {
     async logout() {
       await this.$store.dispatch("auth/logout");
-      this.$router.push("/login");
+      await this.$router.push("/login");
     },
     async fetchReportsCounts() {
       try {
